@@ -1,0 +1,101 @@
+.page-container{max-width:1080px;margin:0 auto;padding:1rem}
+body{font-family:'Lora',serif;font-size:15px;line-height:1.55}
+h1,h2,h3,h4,h5,h6,.stat-title,.btn,.navbar-title{font-family:'Cinzel',serif;line-height:1.3}
+h1{font-size:1.6rem} h2{font-size:1.2rem} h3{font-size:1.02rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes headerGlow{0%,100%{text-shadow:0 0 14px rgba(232,191,106,.25)}50%{text-shadow:0 0 28px rgba(232,191,106,.45)}}
+@keyframes gamesListCardIn{from{opacity:0}to{opacity:1}}
+.panel{background:linear-gradient(180deg,#fffaf2,#fff2e3);border:1px solid #d4a96a;border-radius:10px;padding:.82rem .9rem;margin-bottom:.8rem;box-shadow:0 4px 12px rgba(59,31,14,.06)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.75rem}
+.btn{display:inline-block;padding:.45rem .78rem;border:0;border-radius:7px;cursor:pointer;text-decoration:none;font-weight:700;font-size:.84rem;transition:.2s transform,.2s opacity}
+.btn:hover{transform:translateY(-1px);opacity:.95}
+.btn-gold{background:linear-gradient(135deg,#6b3a1f,#3b1f0e);color:#f5e4b8}
+.btn-outline{border:1px solid #6b3a1f;color:#6b3a1f;background:transparent}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-bottom:1px solid #e6c99b;padding:.45rem;text-align:left;font-size:.92rem}
+.chip{display:inline-block;border-radius:14px;padding:.13rem .5rem;font-size:.68rem;background:#f5e4b8}
+.game-card{background:linear-gradient(180deg,#f7ead6,#edd6b6);position:relative;overflow:hidden;animation:cardIn .45s ease both}
+.game-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c9922a,#d4a96a,#c9922a);background-size:200% 100%;animation:shimmer 3s linear infinite}
+.game-card h2{margin:0 0 .35rem}
+.game-meta{display:flex;gap:.32rem;flex-wrap:wrap;margin:.35rem 0 .45rem}
+/* Games list: avoid row overlap (no height:100% + flex quirks); grid gap only for vertical rhythm */
+.games-list-grid{row-gap:1.15rem;column-gap:.85rem;align-items:stretch}
+.games-list-grid>.games-list-card.panel{margin-bottom:0}
+.games-list-grid .game-card{animation:gamesListCardIn .4s ease both}
+.games-list-grid .games-list-card{display:flex;flex-direction:column;align-self:stretch;overflow:visible;position:relative;z-index:0}
+.games-list-grid .games-list-card:hover{z-index:1}
+.games-list-card-body{flex:1 1 auto}
+.games-list-card-footer{margin-top:auto;padding-top:.7rem;border-top:1px solid rgba(107,58,31,.12);flex-shrink:0}
+.games-list-card-btn{display:block;width:100%;text-align:center;box-sizing:border-box}
+/* Hover lift/scale bleeds into next row’s layout box — disable on dense grid */
+.games-list-grid .game-card:hover{transform:none;box-shadow:0 6px 18px rgba(59,31,14,.12)!important}
+.games-list-card h2{font-size:1.03rem}
+.games-list-card .game-meta{font-size:.84rem}
+.games-list-card p{font-size:.89rem;line-height:1.4}
+.games-list-card .chip{font-size:.62rem;padding:.11rem .45rem}
+.detail-section h3{margin:0 0 .45rem;font-size:1.05rem;color:#5a3018}
+.detail-section p{line-height:1.55}
+.detail-section details{border:1px solid #e6c99b;background:#fffaf4;border-radius:8px;padding:.45rem .55rem;margin:.35rem 0}
+.detail-section summary{cursor:pointer;font-weight:700;color:#6b3a1f}
+.detail-section details[open] summary{margin-bottom:.35rem}
+.risk-meter{margin:.4rem 0 .65rem}
+.section-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.video-embed{width:100%;aspect-ratio:16/9;border:0;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,.12)}
+form label{display:block;margin:.38rem 0 .16rem;font-family:'Cinzel',serif;font-size:.68rem}
+form input,form select,form textarea{width:100%;padding:.43rem;border:1px solid #d4a96a;border-radius:6px;background:#fff}
+.theme-toggle{padding:.31rem .62rem;font-size:.68rem}
+.stat-card{padding:.75rem;border-radius:10px;background:linear-gradient(145deg,#fffaf0,#fdeccd);border:1px solid #e2bf82}
+.stat-card{animation:cardIn .45s ease both;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#c9922a,#d4a96a,#c9922a);background-size:200% 100%;animation:shimmer 3s linear infinite}
+.stat-title{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:#6b3a1f}
+.stat-value{font-size:1.25rem;font-weight:800;color:#3b1f0e;margin-top:.12rem}
+.quick-links{display:flex;gap:.55rem;flex-wrap:wrap}
+.timeline-item{padding:.5rem .6rem;border-left:4px solid #d4a96a;background:#fff;border-radius:8px;margin:.4rem 0;font-size:.92rem}
+.landing-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:.8rem;align-items:center}
+.landing-title{font-size:1.72rem;line-height:1.2;margin:.12rem 0 .42rem}
+.landing-sub{font-size:.96rem;line-height:1.6;max-width:58ch}
+.landing-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem}
+.kanding-wrap{display:flex;justify-content:center}
+.kanding-art{max-width:290px;width:100%;filter:drop-shadow(0 7px 14px rgba(0,0,0,.13))}
+.navbar{height:56px!important;padding:0 1rem!important}
+.navbar-title{font-size:.98rem!important}
+.navbar-links{gap:.85rem!important}
+.navbar-links a{font-size:.67rem!important}
+.bandiritas{height:20px!important}
+.games-page-header{position:relative;overflow:hidden;border-radius:10px;padding:2.1rem .9rem;text-align:center;margin-bottom:.8rem}
+.games-page-header::before{content:'';position:absolute;inset:0;background-image:url('/larong_pinoy/assets/images/games-header-bg.png');background-size:cover;background-position:center 42%;filter:saturate(.9)}
+.games-page-header::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,8,3,.56),rgba(40,18,6,.78))}
+.games-page-header > *{position:relative;z-index:1}
+.games-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#e8bf6a;margin-bottom:.32rem;animation:fadeUp .4s ease both}
+.games-title{font-family:'Cinzel',serif;font-size:clamp(1.25rem,3vw,1.9rem);color:#f5e4b8;text-shadow:0 2px 8px rgba(0,0,0,.5);animation:headerGlow 3s ease-in-out infinite, fadeUp .5s ease .08s both}
+.games-sub{font-size:.85rem;color:#f5ead8;font-style:italic;margin-top:.2rem;animation:fadeUp .5s ease .16s both}
+.auth-wrap{max-width:500px;margin:.2rem auto}
+.auth-card{background:linear-gradient(160deg,#fffaf2,#fff5e6);border:1px solid #d4a96a;border-radius:12px;box-shadow:0 8px 26px rgba(59,31,14,.12);overflow:hidden;animation:cardIn .5s ease both}
+.auth-head{background:linear-gradient(135deg,#3b1f0e,#5a2810);padding:1rem;text-align:center}
+.auth-title{font-family:'Cinzel Decorative',serif;color:#f5e4b8;font-size:1rem;animation:headerGlow 3s ease-in-out infinite}
+.auth-sub{font-family:'Cinzel',serif;color:#d4a96a;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase}
+.auth-body{padding:1rem}
+.auth-actions{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:.7rem}
+.auth-note{font-size:.72rem;color:#6b3a1f}
+
+.theme-dark body{background:#1e1a17;color:#eee2cd}
+.theme-dark .panel{background:linear-gradient(180deg,#2b2520,#241f1b);border-color:#7f6640;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.theme-dark .game-card{background:linear-gradient(180deg,#3a3026,#2f261d)}
+.theme-dark .btn-outline{border-color:#c8a16b;color:#e8cc9f}
+.theme-dark .chip{background:#4b3d2c;color:#f1d9b5}
+.theme-dark .table th,.theme-dark .table td{border-bottom-color:#5a4a35}
+.theme-dark form input,.theme-dark form select,.theme-dark form textarea{background:#2f2822;color:#f2e3cb;border-color:#806745}
+.theme-dark .stat-card{background:linear-gradient(145deg,#3a3028,#312820);border-color:#8f6f47}
+.theme-dark .stat-title{color:#d9b787}
+.theme-dark .stat-value{color:#f5dfc0}
+.theme-dark .timeline-item{background:#2f2822;border-left-color:#b78a50}
+.theme-dark .landing-sub{color:#e8dcc9}
+
+@media (max-width:900px){
+  .landing-hero{grid-template-columns:1fr}
+  .landing-title{font-size:1.45rem}
+  .kanding-art{max-width:210px}
+  .games-page-header{padding:1.65rem .7rem}
+}
