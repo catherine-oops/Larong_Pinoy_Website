@@ -12,10 +12,10 @@ The system includes user registration, login, profile management, favorite games
 
 Tech Stack:
 
-PHP
-MySQL
-HTML
-CSS
+PHP,
+MySQL,
+HTML,
+CSS,
 JavaScript
 
 Suggested GitHub topics:
